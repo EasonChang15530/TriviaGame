@@ -15,12 +15,16 @@
 </head>
 
 <body>
-  <header class="welcome">
+  <header>
     <h1>TriviaGame</h1>
     <br>
   </header>
 
   <main>
+    <section class="startPage">
+      <button id="start">Start</button>
+    </section>
+
 
     <section class="scoreboard">
       <h3>All done, heres how you did!</h3>
@@ -50,6 +54,7 @@
           <button>Los Angeles Rams</button>
           <button>Atlanta Falcons</button>
         </p>
+        <p class="correctAns">Philadelphia Eagles</p>
       </div>
 
       <div id="title2">
@@ -63,6 +68,7 @@
           <button>Greece</button>
           <button>Russia</button>
         </p>
+        <p class="correctAns">Qatar</p>
       </div>
 
       <div id="title3">
@@ -75,6 +81,7 @@
           <button>Nile River</button>
           <button>Yangtze River</button>
         </p>
+        <p class="correctAns">Nile River</p>
       </div>
 
       <div id="title4">
@@ -87,6 +94,7 @@
           <button>Brazil</button>
           <button>India</button>
         </p>
+        <p class="correctAns">China</p>
       </div>
 
       <div id="title5">
@@ -99,16 +107,29 @@
           <button>Avatar</button>
           <button>Titanic</button>
         </p>
+        <p class="correctAns">Avatar</p>
       </div>
 
     </section>
 
 
-    <section class="record">
+    <section class="result">
+      <div id="correct">
+        <h4>Correct!</h4>
+        <img>
+      </div>
 
-      <h4>Random Number <span id="randomNumber"></span></h4>
-      <h4>Your Score <span id="scoreCounter"></span></h4>
-      <br>
+      <div id="incorrect">
+        <h4>Nope!</h4>
+        <p>The Correct Answer was:<span></span></p>
+        <img>
+      </div>
+
+      <div id="outOfTime">
+        <h4>Out of Time!</h4>
+        <p>The Correct Answer was:<span></span></p>
+        <img>
+      </div>
 
     </section>
 
