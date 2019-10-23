@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TriviaGame</title>
+  <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Lobster|Modak|Pacifico|Permanent+Marker|Satisfy|Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="welcome">
+    <h1>TriviaGame</h1>
+    <br>
+  </header>
+
+  <main>
+
+    <section class="scoreboard">
+      <h3>All done, heres how you did!</h3>
+      <h4>Correct Answers: <span id="correctAnsNum"></span></h4>
+      <br>
+      <h4>Incorrect Answers: <span id="incorrectAnsNum"></span></h4>
+      <br>
+      <h4>Unanswered: <span id="unAnsedNum"></span></h4>
+      <br>
+      <button id="startOver">Start over?</button>
+    </section>
+
+    <section class="stopwatch">
+
+      <h3>Time Remaining: <span id="countDown"></span> Seconds</h3>
+    </section>
+
+
+    <section class="multipleChoice">
+      <div id="title1">
+        <p class="question">
+          Which team is the Super Bowl LII champion?
+        </p>
+        <p class="choice">
+          <button>Philadelphia Eagles</button>
+          <button>New England Patriots</button>
+          <button>Los Angeles Rams</button>
+          <button>Atlanta Falcons</button>
+        </p>
+      </div>
+
+      <div id="title2">
+        <p class="question">
+          Which country will host the 2022 FIFA World Cup?
+
+        </p>
+        <p class="choice">
+          <button>Qatar</button>
+          <button>Japan</button>
+          <button>Greece</button>
+          <button>Russia</button>
+        </p>
+      </div>
+
+      <div id="title3">
+        <p class="question">
+          What is the longest river in the world?
+        </p>
+        <p class="choice">
+          <button>Mississippi River</button>
+          <button>Amazon River</button>
+          <button>Nile River</button>
+          <button>Yangtze River</button>
+        </p>
+      </div>
+
+      <div id="title4">
+        <p class="question">
+          Which country has the largest population in the world?
+        </p>
+        <p class="choice">
+          <button>the United States</button>
+          <button>China</button>
+          <button>Brazil</button>
+          <button>India</button>
+        </p>
+      </div>
+
+      <div id="title5">
+        <p class="question">
+          which movie won the biggest box office until now?
+        </p>
+        <p class="choice">
+          <button>Star Wars: The Force Awakens</button>
+          <button>Harry Potter and the Deathly Hallows Part 2</button>
+          <button>Avatar</button>
+          <button>Titanic</button>
+        </p>
+      </div>
+
+    </section>
+
+
+    <section class="record">
+
+      <h4>Random Number <span id="randomNumber"></span></h4>
+      <h4>Your Score <span id="scoreCounter"></span></h4>
+      <br>
+
+    </section>
+
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>

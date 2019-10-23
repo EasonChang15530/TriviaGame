@@ -1,0 +1,46 @@
+body {
+  background-image: url("../images/grassland.jpg");
+
+}
+
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.welcome{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 48px;
+  text-align: center;
+  color: darkmagenta;;
+}
+
+
+.scoreboard {
+  font-family: 'Fascinate Inline', cursive;
+  font-size: 32px;
+  text-align: center;
+  color: seashell;
+}
+
+.main-section {
+  position: relative;
+  float: left;
+  overflow: auto;
+}
+
+
+img{
+  width: 240px;
+  height: 240px;
+}
+
+
+.record{
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+  text-align: center;
+  color: green;
+}
