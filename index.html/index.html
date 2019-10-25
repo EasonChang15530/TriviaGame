@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>TriviaGame</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   <link
@@ -21,93 +22,82 @@
   </header>
 
   <main>
-    <section class="startPage">
-      <button id="start">Start</button>
+    <section id="startPage">
+      <br>
+      <button type="button" class="btn btn-outline-light" id="start">Start</button>
+      
     </section>
 
 
-    <section class="scoreboard">
-      <h3>All done, heres how you did!</h3>
-      <h4>Correct Answers: <span id="correctAnsNum"></span></h4>
-      <br>
-      <h4>Incorrect Answers: <span id="incorrectAnsNum"></span></h4>
-      <br>
-      <h4>Unanswered: <span id="unAnsedNum"></span></h4>
-      <br>
-      <button id="startOver">Start over?</button>
-    </section>
-
-    <section class="stopwatch">
+    <section id="stopwatch">
 
       <h3>Time Remaining: <span id="countDown"></span> Seconds</h3>
+      <br>
     </section>
 
 
-    <section class="multipleChoice">
+    <section id="multipleChoice">
       <div id="title1">
-        <p class="question">
+        <p id="question1">
           Which team is the Super Bowl LII champion?
+          
         </p>
-        <p class="choice">
-          <button>Philadelphia Eagles</button>
-          <button>New England Patriots</button>
-          <button>Los Angeles Rams</button>
-          <button>Atlanta Falcons</button>
+        <br>
+        <p id="choice1">
+          <button type="button" class="btn btn-success" id="btn1">Philadelphia Eagles</button><br>
+          <button type="button" class="btn btn-success" id="btn2">New England Patriots</button><br>
+          <button type="button" class="btn btn-success" id="btn3">Los Angeles Rams</button><br>
+          <button type="button" class="btn btn-success" id="btn4">Atlanta Falcons</button><br>
         </p>
-        <p class="correctAns">Philadelphia Eagles</p>
       </div>
 
       <div id="title2">
-        <p class="question">
+        <p id="question2">
           Which country will host the 2022 FIFA World Cup?
 
         </p>
-        <p class="choice">
+        <p id="choice2">
           <button>Qatar</button>
           <button>Japan</button>
           <button>Greece</button>
           <button>Russia</button>
         </p>
-        <p class="correctAns">Qatar</p>
       </div>
 
       <div id="title3">
-        <p class="question">
+        <p id="question3">
           What is the longest river in the world?
         </p>
-        <p class="choice">
+        <p id="choice3">
           <button>Mississippi River</button>
           <button>Amazon River</button>
           <button>Nile River</button>
           <button>Yangtze River</button>
         </p>
-        <p class="correctAns">Nile River</p>
       </div>
 
       <div id="title4">
-        <p class="question">
+        <p id="question4">
           Which country has the largest population in the world?
         </p>
-        <p class="choice">
+        <p id="choice4">
           <button>the United States</button>
           <button>China</button>
           <button>Brazil</button>
           <button>India</button>
         </p>
-        <p class="correctAns">China</p>
       </div>
 
       <div id="title5">
-        <p class="question">
+        <p id="question5">
           which movie won the biggest box office until now?
         </p>
-        <p class="choice">
+        <p id="choice5">
           <button>Star Wars: The Force Awakens</button>
           <button>Harry Potter and the Deathly Hallows Part 2</button>
           <button>Avatar</button>
           <button>Titanic</button>
         </p>
-        <p class="correctAns">Avatar</p>
       </div>
 
     </section>
@@ -121,16 +111,28 @@
 
       <div id="incorrect">
         <h4>Nope!</h4>
-        <p>The Correct Answer was:<span></span></p>
+        <p>The Correct Answer was:<span id="correctAns"></span></p>
         <img src="../assets/images/incorrectgif.gif" alt="incorrectgif">
       </div>
 
       <div id="outOfTime">
         <h4>Out of Time!</h4>
-        <p>The Correct Answer was:<span></span></p>
+        <p>The Correct Answer was:<span id="correctAns"></span></p>
+        <br>
         <img src="../assets/images/outoftimegif.gif" alt="outoftimegif">
       </div>
 
+    </section>
+
+    <section class="scoreboard">
+      <h3>All done, heres how you did!</h3>
+      <h4>Correct Answers: <span id="correctAnsNum"></span></h4>
+      <br>
+      <h4>Incorrect Answers: <span id="incorrectAnsNum"></span></h4>
+      <br>
+      <h4>Unanswered: <span id="unAnsedNum"></span></h4>
+      <br>
+      <button id="startOver">Start over?</button>
     </section>
 
 

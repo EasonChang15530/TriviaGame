@@ -3,33 +3,44 @@ body {
 
 }
 
+header{
+  text-align: center;
+  font-size: 64px;
+  font-family: 'Fascinate Inline', cursive;
+  color: chocolate;
+  letter-spacing: 8px;
+  padding: 20px;
+}
 
 main {
   width: 80%;
   margin: 0 auto;
-}
-
-
-.welcome{
-  font-family: 'Permanent Marker', cursive;
-  font-size: 48px;
   text-align: center;
-  color: darkmagenta;;
+  font-family: fantasy;
+  font-size: 30px;
+  font-weight: 900;
+  color: darkmagenta;
 }
 
+button {
+  width: 360px;
+}
+
+#stopwatch {
+  font-family: 'Courgette', cursive;
+  color: blueviolet;
+}
+
+.choice {
+  font-family: monospace;
+}
 
 .scoreboard {
-  font-family: 'Fascinate Inline', cursive;
-  font-size: 32px;
-  text-align: center;
-  color: seashell;
+  font-family: 'Permanent Marker', cursive;
+  color: darkmagenta;
 }
 
-.main-section {
-  position: relative;
-  float: left;
-  overflow: auto;
-}
+
 
 
 img{
