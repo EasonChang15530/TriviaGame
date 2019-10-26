@@ -72,7 +72,7 @@ $(document).ready(function () {
 
   };
 
-  
+
   // Game page
   function gamePage() {
 
@@ -89,7 +89,6 @@ $(document).ready(function () {
       pageCountDown();
     };
 
-
     // for (var i = 0; i < questions.length; i++) {
     $("#title").text(questions[questionIndex].q);
     $("#choice1").text(questions[questionIndex].a1);
@@ -97,8 +96,14 @@ $(document).ready(function () {
     $("#choice3").text(questions[questionIndex].a3);
     $("#choice4").text(questions[questionIndex].a4);
 
+    clickEvent();
+    
+  };
 
-    $(".btn").on("click", function () {
+  function clickEvent() {
+
+
+    $("#multipleChoice .btn").on("click", function () {
       userChoice = $(this).text();
       console.log(userChoice);
 
@@ -132,6 +137,8 @@ $(document).ready(function () {
     });
 
   };
+
+
 
 
   // thirty seconds countdown
