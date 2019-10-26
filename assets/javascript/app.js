@@ -231,6 +231,3 @@ $(document).ready(function () {
 
 });
 
-
-
-
