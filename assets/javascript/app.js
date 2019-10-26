@@ -57,6 +57,9 @@ $(document).ready(function () {
   // reset game
   function reset() {
 
+    // initializes questionIndex
+    questionIndex = 0;
+
     $("#stopwatch").hide();
     $("#multipleChoice").hide();
     $("#scoreboard").hide();
@@ -96,49 +99,29 @@ $(document).ready(function () {
     $("#choice3").text(questions[questionIndex].a3);
     $("#choice4").text(questions[questionIndex].a4);
 
-    clickEvent();
-    
-  };
-
-  function clickEvent() {
-
-
-    $("#multipleChoice .btn").on("click", function () {
-      userChoice = $(this).text();
-      console.log(userChoice);
-
-      if (userChoice === questions[questionIndex].correctAns) {
-        console.log("correct!");
-        correctCount++;
-        win();
-        clearInterval(countdown30s);
-
-        // shows next question after 3 seconds Automatically.
-        setTimeout(function () {
-          gamePage();
-        }, 3000);
-      }
-      else {
-        console.log("incorrect!");
-        incorrectCount++;
-        loss();
-        clearInterval(countdown30s);
-
-        // shows next question after 3 seconds Automatically.
-        setTimeout(function () {
-          gamePage();
-        }, 3000);
-      };
-
-      clockRunning = false;
-      // shows next question rather than showing the same one again.
-      questionIndex++;
-      console.log(questionIndex);
-    });
-
   };
 
 
+  $("#multipleChoice .btn").on("click", function () {
+    userChoice = $(this).text();
+    console.log(userChoice);
+
+    if (userChoice === questions[questionIndex].correctAns) {
+      console.log("correct!");
+      correctCount++;
+      win();
+
+    }
+    else {
+      console.log("incorrect!");
+      incorrectCount++;
+      loss();
+
+    };
+
+    clockRunning = false;
+
+  });
 
 
   // thirty seconds countdown
@@ -174,6 +157,21 @@ $(document).ready(function () {
     $("#correct").show();
 
     console.log("You Win!")
+
+    clearInterval(countdown30s);
+
+    // shows next question rather than showing the same one again.
+    questionIndex++;
+    console.log(questionIndex);
+
+    if (questionIndex < 5) {
+      // shows next question after 3 seconds Automatically.
+      setTimeout(function () {
+        gamePage();
+      }, 3000);
+    } else {
+      finalpage();
+    }
   };
 
 
@@ -189,6 +187,20 @@ $(document).ready(function () {
     // shows the correct answer for this question.
     $("#correctAns1").text(questions[questionIndex].correctAns);
 
+    clearInterval(countdown30s);
+
+    // shows next question rather than showing the same one again.
+    questionIndex++;
+    console.log(questionIndex);
+
+    if (questionIndex < 5) {
+      // shows next question after 3 seconds Automatically.
+      setTimeout(function () {
+        gamePage();
+      }, 3000);
+    } else {
+      finalpage();
+    }
   };
 
 
@@ -202,6 +214,19 @@ $(document).ready(function () {
     // shows the correct answer for this question.
     $("#correctAns2").text(questions[questionIndex].correctAns);
 
+    questionIndex++;
+    console.log(questionIndex);
+
+    clearInterval(countdown30s);
+
+    if (questionIndex < 5) {
+      // shows next question after 3 seconds Automatically.
+      setTimeout(function () {
+        gamePage();
+      }, 3000);
+    } else {
+      finalpage();
+    }
   };
 
 
@@ -230,6 +255,7 @@ $(document).ready(function () {
   };
 
 
+
   // initializes game
   reset();
 
@@ -237,4 +263,5 @@ $(document).ready(function () {
   // finalpage();
 
 });
+
 
