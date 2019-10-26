@@ -5,8 +5,10 @@ $(document).ready(function () {
   var countdown30s;
   var correctCount = 0;
   var incorrectCount = 0;
-  var unfinishedCount = 0;
-
+  var unAnsedCount = 0;
+  var questionIndex = 0;
+  var userChoice;
+  var clockRunning = false;
 
 
   var questions = [
@@ -27,6 +29,14 @@ $(document).ready(function () {
       correctAns: "Qatar"
     },
     {
+      q: "which movie won the biggest box office until now?",
+      a1: "Star Wars: The Force Awakens",
+      a2: "Harry Potter and the Deathly Hallows Part 2",
+      a3: "Avatar",
+      a4: "Titanic",
+      correctAns: "Avatar"
+    },
+    {
       q: "What is the longest river in the world?",
       a1: "Mississippi River",
       a2: "Amazon River",
@@ -41,14 +51,6 @@ $(document).ready(function () {
       a3: "Brazil",
       a4: "India",
       correctAns: "China"
-    },
-    {
-      q: "which movie won the biggest box office until now?",
-      a1: "Star Wars: The Force Awakens",
-      a2: "Harry Potter and the Deathly Hallows Part 2",
-      a3: "Avatar",
-      a4: "Titanic",
-      correctAns: "Avatar"
     }];
 
 
@@ -58,7 +60,10 @@ $(document).ready(function () {
     $("#stopwatch").hide();
     $("#multipleChoice").hide();
     $("#scoreboard").hide();
-    $("#result").hide();
+    // $("#result").hide();
+    $("#correct").hide();
+    $("#incorrect").hide();
+    $("#outOfTime").hide();
     $("#start").show();
 
     $("#start").on("click", function () {
@@ -67,69 +72,99 @@ $(document).ready(function () {
 
   };
 
+  
   // Game page
   function gamePage() {
 
     $("#start").hide();
+    $("#scoreboard").hide();
+    $("#correct").hide();
+    $("#incorrect").hide();
+    $("#outOfTime").hide();
+
     $("#stopwatch").show();
     $("#multipleChoice").show();
 
-    pageCountDown();
-
-    for (var i = 0; i < questions.length; i++) {
-      $("#title").text(questions[i].q);
-      $("#choice1").text(questions[i].a1);
-      $("#choice2").text(questions[i].a2);
-      $("#choice3").text(questions[i].a3);
-      $("#choice4").text(questions[i].a4);
-
-      console.log(i);
-
-      $(".btn").on("click", function () {
-        var userChoice = $(this).text();
-        console.log(userChoice);
-
-        if (userChoice === questions[i].correctAns) {
-          console.log("right!")
-          correctCount++;
-          win();
-        }
-      });
-
+    if (!clockRunning) {
+      pageCountDown();
     };
 
 
+    // for (var i = 0; i < questions.length; i++) {
+    $("#title").text(questions[questionIndex].q);
+    $("#choice1").text(questions[questionIndex].a1);
+    $("#choice2").text(questions[questionIndex].a2);
+    $("#choice3").text(questions[questionIndex].a3);
+    $("#choice4").text(questions[questionIndex].a4);
+
+
+    $(".btn").on("click", function () {
+      userChoice = $(this).text();
+      console.log(userChoice);
+
+      if (userChoice === questions[questionIndex].correctAns) {
+        console.log("correct!");
+        correctCount++;
+        win();
+        clearInterval(countdown30s);
+
+        // shows next question after 3 seconds Automatically.
+        setTimeout(function () {
+          gamePage();
+        }, 3000);
+      }
+      else {
+        console.log("incorrect!");
+        incorrectCount++;
+        loss();
+        clearInterval(countdown30s);
+
+        // shows next question after 3 seconds Automatically.
+        setTimeout(function () {
+          gamePage();
+        }, 3000);
+      };
+
+      clockRunning = false;
+      // shows next question rather than showing the same one again.
+      questionIndex++;
+      console.log(questionIndex);
+    });
 
   };
+
 
   // thirty seconds countdown
   function pageCountDown() {
-    pagetime = 3;
-    countdown30s = setInterval(thirtySeconds, 1000);
-  };
 
-  function thirtySeconds() {
+    pagetime = 30;
+    clockRunning = true;
 
-    pagetime--;
-    console.log(pagetime);
+    countdown30s = setInterval(function () {
 
-    $("#countDown").text(pagetime);
+      pagetime--;
+      console.log(pagetime);
 
-    if (pagetime === 0) {
-      clearInterval(countdown30s);
+      $("#countDown").text(pagetime);
 
-      timeout()
+      if (pagetime === 0) {
+        clearInterval(countdown30s);
+        unAnsedCount++;
+        clockRunning = false;
+        timeout()
 
-    };
+      };
+    }, 1000);
+
   };
 
 
   // result about win
   function win() {
-    
+
     $("#multipleChoice").hide();
     $("#scoreboard").hide();
-    $("#result").show();
+    $("#correct").show();
 
     console.log("You Win!")
   };
@@ -137,14 +172,16 @@ $(document).ready(function () {
 
   // result about loss
   function loss() {
-    
+
     $("#multipleChoice").hide();
     $("#scoreboard").hide();
-    $("#result").show();
+    $("#incorrect").show();
 
     console.log("You Lose.")
 
-    // TODO: shows the correct answer for this question.
+    // shows the correct answer for this question.
+    $("#correctAns1").text(questions[questionIndex].correctAns);
+
   };
 
 
@@ -153,22 +190,31 @@ $(document).ready(function () {
 
     $("#multipleChoice").hide();
     $("#scoreboard").hide();
-    $("#result").show();
+    $("#outOfTime").show();
 
-    // TODO: shows the correct answer for this question.
+    // shows the correct answer for this question.
+    $("#correctAns2").text(questions[questionIndex].correctAns);
+
   };
 
 
   // displays final page
   function finalpage() {
-    
+
     $("#start").hide();
     $("#stopwatch").hide();
     $("#multipleChoice").hide();
-    $("#result").hide();
+    // $("#result").hide();
+    $("#correct").hide();
+    $("#incorrect").hide();
+    $("#outOfTime").hide();
     $("#scoreboard").show();
 
-    // TODO: puts the correctCount and incorrectCount and unfinishedCount into corresponding position.
+    // puts the correctCount and incorrectCount and unAnsedCount into corresponding position.
+    $("#correctAnsNum").text(correctCount);
+    $("#incorrectAnsNum").text(incorrectCount);
+    $("#unAnsedNum").text(unAnsedCount);
+
 
     $("#startOver").on("click", function () {
       reset();
