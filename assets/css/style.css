@@ -3,7 +3,7 @@ body {
 
 }
 
-header{
+header {
   text-align: center;
   font-size: 64px;
   font-family: 'Fascinate Inline', cursive;
@@ -22,34 +22,32 @@ main {
   color: darkmagenta;
 }
 
+
 button {
   width: 360px;
+  font-family: monospace;
 }
+
 
 #stopwatch {
   font-family: 'Courgette', cursive;
   color: blueviolet;
 }
+  
 
-.choice {
-  font-family: monospace;
-}
-
-.scoreboard {
+#scoreboard {
   font-family: 'Permanent Marker', cursive;
   color: darkmagenta;
 }
 
 
-
-
-img{
+img {
   width: 240px;
   height: 240px;
 }
 
 
-.record{
+#result {
   font-family: 'Pacifico', cursive;
   font-size: 36px;
   text-align: center;

@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>TriviaGame</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   <link
@@ -22,96 +23,48 @@
   </header>
 
   <main>
+    <!-- startPage part -->
     <section id="startPage">
       <br>
       <button type="button" class="btn btn-outline-light" id="start">Start</button>
-      
     </section>
 
-
+    <!-- stopwatch part -->
     <section id="stopwatch">
-
       <h3>Time Remaining: <span id="countDown"></span> Seconds</h3>
       <br>
     </section>
 
-
+    <!-- questions (main page) part -->
     <section id="multipleChoice">
-      <div id="title1">
-        <p id="question1">
-          Which team is the Super Bowl LII champion?
-          
-        </p>
-        <br>
-        <p id="choice1">
-          <button type="button" class="btn btn-success" id="btn1">Philadelphia Eagles</button><br>
-          <button type="button" class="btn btn-success" id="btn2">New England Patriots</button><br>
-          <button type="button" class="btn btn-success" id="btn3">Los Angeles Rams</button><br>
-          <button type="button" class="btn btn-success" id="btn4">Atlanta Falcons</button><br>
-        </p>
-      </div>
+      <div id="title"></div>
+      <br>
 
-      <div id="title2">
-        <p id="question2">
-          Which country will host the 2022 FIFA World Cup?
+      <button type="button" class="btn btn-success" id="choice1"></button>
+      <br>
+      <button type="button" class="btn btn-success" id="choice2"></button>
+      <br>
+      <button type="button" class="btn btn-success" id="choice3"></button>
+      <br>
+      <button type="button" class="btn btn-success" id="choice4"></button>
+      <br>
 
-        </p>
-        <p id="choice2">
-          <button>Qatar</button>
-          <button>Japan</button>
-          <button>Greece</button>
-          <button>Russia</button>
-        </p>
-      </div>
-
-      <div id="title3">
-        <p id="question3">
-          What is the longest river in the world?
-        </p>
-        <p id="choice3">
-          <button>Mississippi River</button>
-          <button>Amazon River</button>
-          <button>Nile River</button>
-          <button>Yangtze River</button>
-        </p>
-      </div>
-
-      <div id="title4">
-        <p id="question4">
-          Which country has the largest population in the world?
-        </p>
-        <p id="choice4">
-          <button>the United States</button>
-          <button>China</button>
-          <button>Brazil</button>
-          <button>India</button>
-        </p>
-      </div>
-
-      <div id="title5">
-        <p id="question5">
-          which movie won the biggest box office until now?
-        </p>
-        <p id="choice5">
-          <button>Star Wars: The Force Awakens</button>
-          <button>Harry Potter and the Deathly Hallows Part 2</button>
-          <button>Avatar</button>
-          <button>Titanic</button>
-        </p>
-      </div>
+      <div id="answer"></div>
 
     </section>
 
-
-    <section class="result">
+    <!-- result of individual (correct or incorrect or outOfTime) part -->
+    <section id="result">
       <div id="correct">
         <h4>Correct!</h4>
+        <br>
         <img src="../assets/images/correctgif.gif" alt="correctgif">
       </div>
 
       <div id="incorrect">
         <h4>Nope!</h4>
         <p>The Correct Answer was:<span id="correctAns"></span></p>
+        <br>
         <img src="../assets/images/incorrectgif.gif" alt="incorrectgif">
       </div>
 
@@ -124,7 +77,8 @@
 
     </section>
 
-    <section class="scoreboard">
+    <!-- scoreboard (final page) part -->
+    <section id="scoreboard">
       <h3>All done, heres how you did!</h3>
       <h4>Correct Answers: <span id="correctAnsNum"></span></h4>
       <br>
