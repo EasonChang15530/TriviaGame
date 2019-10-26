@@ -170,7 +170,9 @@ $(document).ready(function () {
         gamePage();
       }, 3000);
     } else {
-      finalpage();
+      setTimeout(function () {
+        finalpage();
+      }, 3000);
     }
   };
 
@@ -199,7 +201,9 @@ $(document).ready(function () {
         gamePage();
       }, 3000);
     } else {
-      finalpage();
+      setTimeout(function () {
+        finalpage();
+      }, 3000);
     }
   };
 
@@ -225,7 +229,9 @@ $(document).ready(function () {
         gamePage();
       }, 3000);
     } else {
-      finalpage();
+      setTimeout(function () {
+        finalpage();
+      }, 3000);
     }
   };
 
